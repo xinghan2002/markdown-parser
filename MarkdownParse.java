@@ -10,21 +10,23 @@ public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
-        System.out.println(markdown.length());
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
+
+            if (openBracket == -1) break;
+
+            while (markdown.charAt(openBracket - 1) == '!') {
+                openBracket = markdown.indexOf("[", openBracket + 1);
+            }
+
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
+
             toReturn.add(markdown.substring(openParen + 1, closeParen));
-            // currentIndex = (closeParen + 1);
-            if (openBracket == -1) {
-                break;
-            } else {
-                currentIndex = closeParen + 1;
-            }
+            currentIndex = closeParen + 1;
         }
 
         return toReturn;
