@@ -27,4 +27,43 @@ public class MarkdownParseTest {
 
         assertArrayEquals(result.toArray(), links.toArray());
     }
+
+
+
+    @Test
+    public void testFile2() throws IOException {
+
+        String content = Files.readString(Path.of("test-file2.md"));
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+
+        ArrayList<String> result = new ArrayList<>(Arrays.asList("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+
+        assertArrayEquals(result.toArray(), links.toArray());
+    }
+
+
+
+    @Test
+    public void testFile3() throws IOException {
+
+        String content = Files.readString(Path.of("test-file3.md"));
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+
+        ArrayList<String> result = new ArrayList<>(Arrays.asList("https://something.com", "some-thing.html"));
+
+        assertArrayEquals(result.toArray(), links.toArray());
+    }
+
+
+
+    @Test
+    public void testFile4() throws IOException {
+
+        String content = Files.readString(Path.of("test-file4.md"));
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+
+        ArrayList<String> result = new ArrayList<>(Arrays.asList("actual_link.html"));
+
+        assertArrayEquals(result.toArray(), links.toArray());
+    }
 }
