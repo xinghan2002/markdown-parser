@@ -152,7 +152,7 @@ public class MarkdownParseTest {
         String content = Files.readString(Path.of("part6/test-file8.md"));
         ArrayList<String> links = MarkdownParse.getLinks(content);
 
-        ArrayList<String> result = new ArrayList<>();
+        ArrayList<String> result = new ArrayList<>(Arrays.asList("a link on the first line"));
 
         assertArrayEquals(result.toArray(), links.toArray());
     }

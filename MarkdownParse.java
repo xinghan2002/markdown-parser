@@ -13,10 +13,11 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
+
             if (openBracket == -1) break;
 
-            while (markdown.charAt(openBracket - 1) == '!' || 
-                markdown.charAt(openBracket - 1) == '\\') {
+            while (markdown.charAt(openBracket == 0 ? openBracket : openBracket - 1) == '!' || 
+                markdown.charAt(openBracket == 0 ? openBracket : openBracket - 1) == '\\') {
                 openBracket = markdown.indexOf("[", openBracket + 1);
 
                 if (openBracket == -1) break;
