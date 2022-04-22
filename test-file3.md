@@ -4,5 +4,5 @@
 
 [link2](some-thing.html)
 
-[half a link](the_link_here.html
+[half a link](fake_link.html
 
