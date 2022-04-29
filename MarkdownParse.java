@@ -26,9 +26,9 @@ public class MarkdownParse {
 
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
-            // while (openParen < markdown.length() && markdown.charAt(openParen + 1) == '(') {
-            //     openParen += 1;
-            // }
+            while (openParen < markdown.length() && markdown.charAt(openParen + 1) == '(') {
+                openParen += 1;
+            }
             int closeParen = markdown.indexOf(")", openParen);
 
             if (openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1) break;
