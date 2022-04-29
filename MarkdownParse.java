@@ -14,7 +14,7 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
 
-            if (openBracket == -1) break;
+            // if (openBracket == -1) break;
 
             while (markdown.charAt(openBracket == 0 ? openBracket : openBracket - 1) == '!' || 
                 markdown.charAt(openBracket == 0 ? openBracket : openBracket - 1) == '\\') {
