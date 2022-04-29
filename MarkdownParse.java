@@ -47,6 +47,6 @@ public class MarkdownParse {
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
 
-        // System.out.println(Character.isLetter('['));
+        // minor edit here -- to try command line git
     }
 }
