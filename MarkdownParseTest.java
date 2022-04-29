@@ -68,6 +68,17 @@ public class MarkdownParseTest {
         assertArrayEquals(result.toArray(), links.toArray());
     }
 
+    @Test
+    public void testFile5() throws IOException {
+
+        String content = Files.readString(Path.of("test-file5.md"));
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+
+        ArrayList<String> result = new ArrayList<>();
+
+        assertArrayEquals(result.toArray(), links.toArray());
+    }
+
 
     @Test
     public void p6TestFile1() throws IOException {
